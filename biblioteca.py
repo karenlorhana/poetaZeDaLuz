@@ -13,7 +13,6 @@ index = input("digite o que deseja fazer: "+
               "\n"+"7 - relatório"+
               "\n"+"8 - sair"+
               "\n")
-#-----------------------------------------------------------------------------------------------
 
 while index != "8":
     if index == "1":
@@ -70,7 +69,7 @@ while index != "8":
         for q in range(qtdLivro):
             print()
             emprestimoLivro = input("digite o nome do livro que " + emprestimoAluno + " deseja retirar: ").upper()
-            if emprestimoAluno in biblioteca.keys():
+            if emprestimoLivro in biblioteca.keys():
                  qtdEmprestimo = int(input("digite quantos livros de " + emprestimoLivro + " o aluno deseja retirar: "))
                  listaLivro.append(emprestimoLivro)
                  exemplarLivro -= qtdEmprestimo
@@ -83,10 +82,10 @@ while index != "8":
         livrosEmprestados[emprestimoAluno] = listaLivro
         print()
         print("quantidade de exemplares disponíveis: ", exemplarLivro)
-        print("quantidade de livros emprestados: ", livrosEmprestados)
-        if livrosEmprestados > 3:
+        print("livros emprestados: ", livrosEmprestados)
+        if len(livrosEmprestados) > 3:
              print()
-             print("o aluno nao pode pegar livros emprestados, pois ultrapassou o limite")
+             print("o aluno não pode pegar livros emprestados, pois ultrapassou o limite")
 
     if index == "6":
         pagamento = 0
@@ -108,7 +107,6 @@ while index != "8":
                     livrosEmprestados[devolucaoAluno].remove(devolvendo)
                     print(livrosEmprestados[devolucaoAluno])
                     print('ainda está dentro do prazo!')
-
     if index == "7":
         print()
         print("livros: ", livrosEmprestados)
@@ -117,10 +115,10 @@ while index != "8":
 
     print()
     index = input("digite o que deseja fazer: "+
-              "\n"+"1 - cadastrar livros ok"+
-              "\n"+"2 - cadastrar alunos ok"+
-              "\n"+"3 - consultar aluno ok"+
-              "\n"+"4 - consultar livro ok"+
+              "\n"+"1 - cadastrar livros"+
+              "\n"+"2 - cadastrar alunos"+
+              "\n"+"3 - consultar aluno"+
+              "\n"+"4 - consultar livro"+
               "\n"+"5 - empréstimo"+
               "\n"+"6 - devolução e pagamento"+
               "\n"+"7 - relatório"+
